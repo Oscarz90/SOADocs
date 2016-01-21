@@ -24,7 +24,7 @@ El usuario que instala OFM debe ser propietario de los archivos y tener los sigu
 
 Esto significa que alguien mas que la persona que instalo el software, puede usar los instaladores binarios en el Oracle Home (**Oracle_Home**) para configurar un dominio o grupo de Productos de Oracle Fusion Middleware.
 
-Topología de Instalacion Estandar de OFM
+**Topología de Instalacion Estandar de OFM.**
 ```
 /home
 ----- /oracle
@@ -38,6 +38,22 @@ Topología de Instalacion Estandar de OFM
                 (applications)
 ```
 
+>El directorio Oracle Home (Oracle_Home) se debe establecer este directorio base en tu sistema y desde aqui, dos ramas deben ser creadas. El directorio **product** debera contener los archivos binarios de los productos y todos directorios de inicio de Oracle. El directorio **config** debera contener los datos de dominio y datos de la aplicacion.
+
+Acerca del directorio **Oracle Home (_Oracle\_Home_)**.  
+
+Cuando instalas cualquier producto de OFM, se le pedira que especifique un directorio _Oracle Home_. Este directorio funciona como un repositorio para archivos comunes que son usados por multiples productos de OFM instalados en la misma maquina. Por esta razon, el directorio _Oracle Home_ puede ser considerado como un directorio de soporte central para todos los productos de OFM instalados.  
+El directorio _Oracle Home_ es referenciado como **_ORACLE\_HOME_** en la documentacion de OFM.
+
+Acerca del directorio **Domain Home (_domains_)**.  
+
+El _Domain Home_ es el directorio donde seran creados los dominios configurados. La ubicacion default del _Domain Home_ es _ORACLE\_HOME/user\_projects/domains/domain\_name_.  
+El directorio _Domain Home_ es referenciado como **_DOMAIN\_HOME_** en la documentacion de OFM e incluye todos los directorios incluyendo el nombre del dominio. Por ejemplo si tu nombres tu dominio como _exampledomain_ y tu ubicas los datos de tu dominio en _/home/oracle/config/domains_, _DOMAIN\_HOME_ sera usado en la documentacion para referirse a _/home/oracle/config/domains_.  
+
+Acerca del directorio **Application Home (_applications_)**.  
+
+_Application Home_ es el directorio donde se crearan las aplicaciones relacionadas con los dominios que configuraste. La ubicacion default del _Application Home_ es _ORACLE\_HOME/user\_projects/applications/domain\_name_. Oracle recomienda ubicar tu _Application Home_ fuera del directorio _Oracle\_Home_
+
 
 Desinstalacion del BEA JRockit SKD
 ---
@@ -48,7 +64,7 @@ $ rm -rf jrockit-24.5.0-j2sdk1.4.2_<version>
 ```
 >Esto removerà el jdk del equipo
 
-Instalacion JDK
+Instalacion JDK (_Pendiente_)
 ---
 
 1. Colocarse en el directorio de descarga del archivo de instalación. (user:soaadmin)
@@ -56,3 +72,16 @@ Instalacion JDK
 ```shell
 $
 ```
+
+Instalación de Oracle WebLogic y Oracle Coherence.
+---  
+
+1. Topologia estandar de Oracle Weblogic y Coherence.  
+![Con titulo](http://docs.oracle.com/middleware/1221/core/WLSIG/img/GUID-6B616E78-1AAA-462F-84D4-C288EB408698-default.png "titulo")
+
++ **APPHOST**: Termino estandar en la documentacion de Oracle para la maquina que hospeda la capa de aplicacion.  
++ **WebLogic Domain**: Grupo de componentes java logicamente relacionados. En este caso _Administration Server_, _Managed Server_ y otros componentes de software relacionados.  
++ **Administration Server**: Entidad de control central de dominio. Mantiene la configuracion de los objetos del dominio y distribuye cambios de configuraciones a los _Managed Servers_.
++ **Cluster**: Coleccion de multiples instancias de WebLogic Servers corriendo simultaneamente y trabajando juntos.
++ **Machine**: Representacion logica de la computadora que hospeda uno o mas instancias de Weblogic Server (_servers_). Las maquinas tambien son el enlace logico entre los _Managed Servers_ y _Node Manager_; para empezar y detener un _Managed Server_ con Node Manager, el _Managed Server_ debe estar asociado con una maquina.
++ **Managed Server**: Hospeda tus aplicaciones, componentes de aplicaciones, servicios web y sus recursos asociados.
