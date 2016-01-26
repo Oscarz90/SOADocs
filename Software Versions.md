@@ -52,11 +52,43 @@ El directorio _Domain Home_ es referenciado como **_DOMAIN\_HOME_** en la docume
 
 Acerca del directorio **Application Home (_applications_)**.  
 
-_Application Home_ es el directorio donde se crearan las aplicaciones relacionadas con los dominios que configuraste. La ubicacion default del _Application Home_ es _ORACLE\_HOME/user\_projects/applications/domain\_name_. Oracle recomienda ubicar tu _Application Home_ fuera del directorio _Oracle\_Home_
+_Application Home_ es el directorio donde se crearan las aplicaciones relacionadas con los dominios que configuraste. La ubicacion default del _Application Home_ es _ORACLE\_HOME/user\_projects/applications/domain\_name_. Oracle recomienda ubicar tu _Application Home_ fuera del directorio _Oracle\_Home_  
 
 
-Desinstalacion del BEA JRockit SKD
+>##NOTAS
+
+####Archivos ~/.bashrc, ~/bash_profile, /etc/bashrc, /etc/profile####
+
 ---
+Son shell scripts (archivos por lotes). Son ficheros que el sistema operativo ejecuta de forma automática cuando se da una cierta condición.
+En el forndo lo que hace el sistema operativo es mandar a bash (el programa interprete de comandos más usual de Linux) ejecutar los archivos.
+Podemos incluir en ellos cualquier orden de la linea de comandos.
+
++ Solo existe una sola copia de los archivos **/etc/profile** y **/etc/bashrc**.
++ Cada usuario tiene su propia copia de los archivos **.bashrc** y **.bash_profile**. (Estos archivos se encuentran en el directorio personal de cada usuario (**~**). El punto hace que estos archivos sean ocultos. Para ver si los tiene pruebe:
+```shell
+$ ls -a ~ 
+```
++ Los archivos **/etc/profile** y **/etc/bashrc** afectan a todos los usuarios.Por tanto son gestionados por el administrador del sistema (**root**).
+
+**Cual de ellos utilizar:**
+
+Podemos clasificar estos cuatro archivos en función de si _los comandos que contienen_ afectan a un solo usuario o contrariamente todos los usuarios del sistema se ven afectados.
+
+**Para todos los usuarios**: (Se necesita permisos de root para editar/modificar estos archivos)
+
+**/etc/profile**: Se ejecuta cuando qualquier usuario inicia la sesión.
+**/etc/bashrc**: Se ejecuta cada vez que qualquier usuario ejecuta el programa bash.
+
+**Para nuestro usuario**:
+
+**~/.bash_profile**: Se ejecuta el .bash_profile de juanito cuando juanito inicia su sesión.
+**~/.bashrc**: Se ejecuta el .bashrc de juanito cuando juanito ejecuta el programa bash.
+
+####Desinstalacion del BEA JRockit SKD####
+
+--------
+
 1. Colocarse un directorio antes al directorio que contiene el JRockit.
 2. Ejecutar el siguiente comando.
 ```shell
@@ -64,8 +96,9 @@ $ rm -rf jrockit-24.5.0-j2sdk1.4.2_<version>
 ```
 >Esto removerà el jdk del equipo
 
-Instalacion JDK (_Pendiente_)
----
+####Instalacion JDK (_Pendiente_)####
+
+---------
 
 1. Colocarse en el directorio de descarga del archivo de instalación. (user:soaadmin)
 
