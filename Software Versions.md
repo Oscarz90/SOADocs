@@ -103,14 +103,15 @@ $ rm -rf jrockit-24.5.0-j2sdk1.4.2_<version>
 1. Colocarse en el directorio de descarga del archivo de instalación. (user:soaadmin)
 
 ```shell
-$
+(soaadmin)$ tar zxvf jdk-8u<version>-linux-x64.tar.gz
 ```
 
 Instalación de Oracle WebLogic y Oracle Coherence.
 ---  
 
-1. Topologia estandar de Oracle Weblogic y Coherence.  
-![Con titulo](http://docs.oracle.com/middleware/1221/core/WLSIG/img/GUID-6B616E78-1AAA-462F-84D4-C288EB408698-default.png "titulo")
+Topologia estandar de Oracle Weblogic y Coherence.  
+
+![Con titulo](http://drive.google.com/uc?export=view&id=0B43TL8clFj-nb2hUdl9iaWpORjQ "Topologia estandar Oracle Weblogic y Coherence")
 
 + **APPHOST**: Termino estandar en la documentacion de Oracle para la maquina que hospeda la capa de aplicacion.  
 + **WebLogic Domain**: Grupo de componentes java logicamente relacionados. En este caso _Administration Server_, _Managed Server_ y otros componentes de software relacionados.  
@@ -118,3 +119,17 @@ Instalación de Oracle WebLogic y Oracle Coherence.
 + **Cluster**: Coleccion de multiples instancias de WebLogic Servers corriendo simultaneamente y trabajando juntos.
 + **Machine**: Representacion logica de la computadora que hospeda uno o mas instancias de Weblogic Server (_servers_). Las maquinas tambien son el enlace logico entre los _Managed Servers_ y _Node Manager_; para empezar y detener un _Managed Server_ con Node Manager, el _Managed Server_ debe estar asociado con una maquina.
 + **Managed Server**: Hospeda tus aplicaciones, componentes de aplicaciones, servicios web y sus recursos asociados.
+
+Pasos Instalacion de Oracle Weblogic y Coherence:
+1.
+2.
+3.
+
+
+Instalación de Oracle Fusion Middleware Infrastructure.
+---  
+
+Pasos Instalacion de Oracle Fusion Middleware Infrastructure:
+1.
+2.
+3.
