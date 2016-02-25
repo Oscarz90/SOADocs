@@ -121,7 +121,10 @@ Topologia estandar de Oracle Weblogic y Coherence.
 + **Managed Server**: Hospeda tus aplicaciones, componentes de aplicaciones, servicios web y sus recursos asociados.
 
 Pasos Instalacion de Oracle Weblogic y Coherence:
-1.
+
+######1.######
+
+![Con titulo](http://drive.google.com/uc?export=view&id=0B43TL8clFj-nbnZkMkhFdkZZdHM "Instalacion Oracle Weblogic y Coherence")
 2.
 3.
 
